@@ -11,7 +11,7 @@ $client = new Client([
     // You can set any number of default request options.
     'timeout'  => 2.0,
 ]);
-$res = $client->request("GET", $_SERVER["REQUEST_URI"],[
+$res = $client->request("GET", str_replace("api/","",$_SERVER["REQUEST_URI"]),[
     'headers'=>['Referer'=>'https://x.yupoo.com/',
     'User-Agent'=> 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0'
     ,'Accept'=>'image/avif,image/webp,*/*']
